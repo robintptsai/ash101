@@ -1,0 +1,68 @@
+{
+    "apiVersion": "vlabs",
+    "location": "",
+    "properties": {
+        "orchestratorProfile": {
+            "orchestratorRelease": "1.19",
+            "orchestratorVersion": "1.19.15",
+            "kubernetesConfig": {
+                "cloudProviderBackoff": true,
+                "cloudProviderBackoffRetries": 1,
+                "cloudProviderBackoffDuration": 30,
+                "cloudProviderRateLimit": true,
+                "cloudProviderRateLimitQPS": 100,
+                "cloudProviderRateLimitBucket": 150,
+                "cloudProviderRateLimitQPSWrite": 25,
+                "cloudProviderRateLimitBucketWrite": 30,
+                "useInstanceMetadata": false,
+                "networkPlugin": "kubenet",
+                "kubeletConfig": {
+                    "--node-status-update-frequency": "1m"
+                },
+                "controllerManagerConfig": {
+                    "--node-monitor-grace-period": "5m",
+                    "--pod-eviction-timeout": "5m",
+                    "--route-reconciliation-period": "1m"
+                }
+            }
+        },
+        "customCloudProfile": {
+            "portalURL": "",
+            "identitySystem": ""
+        },
+        "featureFlags": {
+            "enableTelemetry": true
+        },
+        "masterProfile": {
+            "dnsPrefix": "",
+            "distro": "aks-ubuntu-18.04",
+            "count": 3,
+            "vmSize": "Standard_DS2_v2"
+        },
+        "agentPoolProfiles": [
+            {
+                "name": "linuxpool",
+                "count": 3,
+                "vmSize": "Standard_D2_v2",
+                "distro": "aks-ubuntu-18.04",
+                "availabilityProfile": "AvailabilitySet",
+                "AcceleratedNetworkingEnabled": false
+            }
+        ],
+        "linuxProfile": {
+            "adminUsername": "azureuser",
+            "ssh": {
+                "publicKeys": [
+                    {
+                        "keyData": ""
+                    }
+                ]
+            },
+            "runUnattendedUpgradesOnBootstrap": false
+        },
+        "servicePrincipalProfile": {
+            "clientId": "",
+            "secret": ""
+        }
+    }
+}
