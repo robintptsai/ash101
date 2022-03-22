@@ -1,10 +1,16 @@
 #!/bin/bash
-# Modify variables
+# user defined variable
 RESOURCE_GROUP="rgRobinAks"
 CLUSTER_PREFIX="robin-aks"
+
+#  CB103001 on fetcb103001
 SUBSCRIPTION_ID="92b3282e-9136-4c5a-94c4-ce0836a10cab"
+
+# spStackApp123 on fetcb103001
 SP_CLIENT_ID="8b631e16-011f-4ea2-b685-01da9455d732"
 SP_CLIENT_SECRET="MaE7Q~XyvvBP1tMHvtWP-_Rwh2Oi1.RjFgEBa"
+
+
 IDENTITY_SYSTEM="azure_ad" #adfs or azure_ad
 AGENT_SUBNET_ID="/subscriptions/92b3282e-9136-4c5a-94c4-ce0836a10cab/resourceGroups/rgRobinAks/providers/Microsoft.Network/virtualNetworks/vnetAks/subnets/agent-sn"
 MASTER_SUBNET_ID="/subscriptions/92b3282e-9136-4c5a-94c4-ce0836a10cab/resourceGroups/rgRobinAks/providers/Microsoft.Network/virtualNetworks/vnetAks/subnets/control-sn"
@@ -12,6 +18,8 @@ FIRST_MASTER_IP="10.100.0.239"
 LOCATION="taipei"
 FQDN="fetazure.fetnet.net"
  
+
+
 # Install require package
 apt-get -f -y install
 apt-get -y update
